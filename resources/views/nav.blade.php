@@ -3,19 +3,25 @@
   <a class="navbar-brand" href="/"><i class="far fa-sticky-note mr-1"></i>memo</a>
 
   <ul class="navbar-nav ml-auto">
+
     @guest
     <li class="nav-item">
       <a class="nav-link" href="">ユーザー登録</a>
-    </li>
+    </li> 
     @endguest 
+    
+    @guest
     <li class="nav-item">
         <a class="nav-link" href="{{ route('login') }}">ログイン</a>
     </li>
-    @guest
-    <li class="nav-item">
-      <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
-    </li>
     @endguest
+
+    @auth
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('articles.create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a> 
+    </li>
+    @endauth
+    
 
     @auth
     <!-- Dropdown -->
