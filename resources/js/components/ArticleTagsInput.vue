@@ -48,9 +48,6 @@ export default {
     tagsJson() {
       return JSON.stringify(this.tags)
     },
-    tagsJson() {
-      return JSON.stringify(this.tags)
-    },
   },
 };
 </script>
