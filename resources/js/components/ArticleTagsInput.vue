@@ -63,5 +63,8 @@ export default {
     margin-right: 4px;
     border-radius: 0px;
     font-size: 13px;
+　.vue-tags-input .ti-tag::before {
+    content: "#";
+  }
   }
 </style>

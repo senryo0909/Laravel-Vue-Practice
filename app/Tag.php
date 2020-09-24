@@ -10,4 +10,8 @@ class Tag extends Model
         'name',
     ];
     
+    public function getHashtagAttribute(): string
+    {
+        return '#' . $this->name;
+    }
 }
