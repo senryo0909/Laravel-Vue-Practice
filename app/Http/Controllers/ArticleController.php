@@ -41,7 +41,14 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        return view('articles.edit', ['article' => $article]);    
+        //編集画面表示にデータを渡す処理
+        $tagNames = $article->tags->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+        return view('articles.edit', [
+            'article' => $article,
+            'tagNames' => $tagNames,
+        ]);    
     }
 
     public function update(ArticleRequest $request, Article $article)

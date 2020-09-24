@@ -4,7 +4,10 @@
   　<input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
   </div>
   <div class="form-group">
+  <!-- createの画面ではタグがないので、$tagNames ??とする -->
   <article-tags-input
+
+  :initial-tags='@json($tagNames ?? [])'
   >
   </article-tags-input>
 </div>
